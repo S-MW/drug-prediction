@@ -23,20 +23,31 @@ import {
 } from '@chakra-ui/icons'
 
 
+// const listOfFruits = [
+//     { "name": "apple", "price": "10SR", "description": "An apple is an edible fruit produced by an apple tree.", "emoji": "🍎" },
+//     { "name": "mango", "price": "43SR", "description": "A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy.", "emoji": "🥭" },
+//     { "name": "orange", "price": "54SR", "description": "Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.", "emoji": "🍊" },
+//     { "name": "strawberry", "price": "80SR", "description": "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries.", "emoji": "🍓" },
+//     { "name": "grape", "price": "38SR", "description": "Grapes are fleshy, rounded fruits that grow in clusters made up of many fruits of greenish, yellowish or purple skin.", "emoji": "🍇" }
+// ]
+
 const listOfFruits = [
-    { "name": "apple", "price": "10SR", "description": "An apple is an edible fruit produced by an apple tree.", "emoji": "🍎" },
-    { "name": "mango", "price": "43SR", "description": "A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy.", "emoji": "🥭" },
-    { "name": "orange", "price": "54SR", "description": "Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.", "emoji": "🍊" },
-    { "name": "strawberry", "price": "80SR", "description": "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries.", "emoji": "🍓" },
-    { "name": "grape", "price": "38SR", "description": "Grapes are fleshy, rounded fruits that grow in clusters made up of many fruits of greenish, yellowish or purple skin.", "emoji": "🍇" }
+
+    { "name": "ROFENAC", "Type": " To reduce pain and inflammation like rheumatoid", "Description": " Taken with or without food, but it is better to take it at a fixed time.", "emoji":"🤕" },
+    { "name": "Neuro-B", "Type": " For Vitamin B deficiency", "Description": " Take this medicine in the dose and duration as advised by your doctor,Swallow the whole or split tablet without crushing or chewing.", "emoji":"🍊" },
+    { "name": "Astatin", "Type": " To lower cholesterol", "Description": "Swallow the tablet whole. Do not break, crush, or chew it. Take this medicine with or without food.", "emoji":"🍔"  },
+    { "name": "ASPIRIN", "Type": " To lower the risk of heart attack", "Description": "Take this medication by mouth. Drink a full glass of water, Do not lie down for at least 10 minutes after you have taken this drug. Do not crush or chew enteric-coated tablets.", "emoji":"💔" },
+    { "name": "Panadrex", "Type": " For headache, migraine", "Description": "Taken with or without food,Do not crush,chew or dissolve the medicine in water.", "emoji":"🤕" },
+    { "name": "Panadol", "Type": " Fast pain relief", "Description": " Taken with or without food, Do not take more than 8 tablets.", "emoji":"🤕" },
+    { "name": "Panadol Extra", "Type": " Analgesic and antipyretic", "Description": " Taken with or without food, drink plenty of cool or warm fluids.", "emoji":"🤕" },
 ]
 
 function TeachablemachineCode() {
 
-    const [result, setResult] = useState({ "name": "", "price": "", "description": "", "emoji": "" });
+    const [result, setResult] = useState({ "name": "", "Type": "", "Description": "" ,"emoji":""});
 
     // the link to your model provided by Teachable Machine export panel
-    const URL = "https://teachablemachine.withgoogle.com/models/XB9TPbR3H/";
+    const URL = "https://teachablemachine.withgoogle.com/models/q95FfVHHn/";
 
     let model, webcam, labelContainer, maxPredictions;
 
@@ -124,9 +135,9 @@ function TeachablemachineCode() {
                     </Thead>
                     <Tbody>
                         <Tr>
-                            <Td>{result.name} {result.emoji}</Td>
-                            <Td>{result.price}</Td>
-                            <Td>{result.description}</Td>
+                            <Td>{result.emoji} {result.name}</Td>
+                            <Td>{result.Type}</Td>
+                            <Td>{result.Description}</Td>
                         </Tr>
                     </Tbody>
                     
