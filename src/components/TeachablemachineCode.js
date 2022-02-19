@@ -3,16 +3,16 @@ import * as tf from '@tensorflow/tfjs';
 import * as tmImage from '@teachablemachine/image';
 
 const listOfFruits = [
-    { "name": "apple", "price": "20SR", "description": "An apple is an edible fruit produced by an apple tree." },
-    { "name": "mango", "price": "20SR", "description": "A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy." },
-    { "name": "orange", "price": "20SR", "description": "Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high." },
-    { "name": "strawberry", "price": "20SR", "description": "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries." },
-    { "name": "grape", "price": "15SR", "description": "Grapes are fleshy, rounded fruits that grow in clusters made up of many fruits of greenish, yellowish or purple skin." }
+    { "name": "apple", "price": "10SR", "description": "An apple is an edible fruit produced by an apple tree.","emoji":"🍎" },
+    { "name": "mango", "price": "43SR", "description": "A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy.","emoji":"🥭" },
+    { "name": "orange", "price": "54SR", "description": "Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.","emoji":"🍊" },
+    { "name": "strawberry", "price": "80SR", "description": "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries.","emoji":"🍓" },
+    { "name": "grape", "price": "38SR", "description": "Grapes are fleshy, rounded fruits that grow in clusters made up of many fruits of greenish, yellowish or purple skin.","emoji":"🍇" }
 ]
 
 function TeachablemachineCode() {
 
-    const [result, setResult] = useState({ "name": "Test", "price": "Test", "description": "TestTestTestTestTestTestTestTestTestTestTestTestTestTest" });
+    const [result, setResult] = useState({ "name": "Test", "price": "Test", "description": "TestTestTestTestTestTestTestTestTestTestTestTestTestTest","emoji":"🙅🏼"});
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/XB9TPbR3H/";
@@ -84,6 +84,7 @@ function TeachablemachineCode() {
             <div>
                 <h1>Result :</h1>
                 <h4>Name:{result.name}</h4>
+                <h1>{result.emoji}</h1>
                 <h4>Price:{result.price}</h4>
                 <h4>Description:{result.description}</h4>
             </div>
