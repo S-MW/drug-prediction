@@ -1,10 +1,11 @@
 import TeachablemachineCode from './components/TeachablemachineCode';
-
+import CallToActionWithAnnotation from './components/CallToActionWithAnnotation'
 function App() {
 
     return (
         <div>
-            <TeachablemachineCode />
+            <CallToActionWithAnnotation/>
+            {/* <TeachablemachineCode /> */}
         </div>
     );
 }
