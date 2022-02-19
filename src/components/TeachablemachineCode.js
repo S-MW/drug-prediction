@@ -1,18 +1,31 @@
 import React, { useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as tmImage from '@teachablemachine/image';
+import {
+    Text,
+    Stack,
+    HStack,
+    VStack,
+    Box,
+    Button,
+} from '@chakra-ui/react'
+import {
+    ViewOffIcon,
+    ViewIcon
+} from '@chakra-ui/icons'
+
 
 const listOfFruits = [
-    { "name": "apple", "price": "10SR", "description": "An apple is an edible fruit produced by an apple tree.","emoji":"🍎" },
-    { "name": "mango", "price": "43SR", "description": "A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy.","emoji":"🥭" },
-    { "name": "orange", "price": "54SR", "description": "Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.","emoji":"🍊" },
-    { "name": "strawberry", "price": "80SR", "description": "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries.","emoji":"🍓" },
-    { "name": "grape", "price": "38SR", "description": "Grapes are fleshy, rounded fruits that grow in clusters made up of many fruits of greenish, yellowish or purple skin.","emoji":"🍇" }
+    { "name": "apple", "price": "10SR", "description": "An apple is an edible fruit produced by an apple tree.", "emoji": "🍎" },
+    { "name": "mango", "price": "43SR", "description": "A mango is a sweet tropical fruit, and it's also the name of the trees on which the fruit grows. Ripe mangoes are juicy.", "emoji": "🥭" },
+    { "name": "orange", "price": "54SR", "description": "Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.", "emoji": "🍊" },
+    { "name": "strawberry", "price": "80SR", "description": "A strawberry is both a low-growing, flowering plant and also the name of the fruit that it produces. Strawberries are soft, sweet, bright red berries.", "emoji": "🍓" },
+    { "name": "grape", "price": "38SR", "description": "Grapes are fleshy, rounded fruits that grow in clusters made up of many fruits of greenish, yellowish or purple skin.", "emoji": "🍇" }
 ]
 
 function TeachablemachineCode() {
 
-    const [result, setResult] = useState({ "name": "Test", "price": "Test", "description": "TestTestTestTestTestTestTestTestTestTestTestTestTestTest","emoji":"🙅🏼"});
+    const [result, setResult] = useState({ "name": "Test", "price": "Test", "description": "TestTestTestTestTestTestTestTestTestTestTestTestTestTest", "emoji": "🙅🏼" });
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/XB9TPbR3H/";
@@ -77,17 +90,30 @@ function TeachablemachineCode() {
 
     return (
         <>
-            <div>Teachable Machine Image Model</div>
-            <button type="button" onClick={() => { init() }}>Start</button>
+        <VStack m="100px">
+        
+            <Button  leftIcon={<ViewIcon />} colorScheme='teal' variant='solid' onClick={() => { init() }}>
+                Open My Camera
+            </Button>
+
             <div id="webcam-container"></div>
             <div id="label-container"></div>
-            <div>
-                <h1>Result :</h1>
-                <h4>Name:{result.name}</h4>
-                <h1>{result.emoji}</h1>
-                <h4>Price:{result.price}</h4>
-                <h4>Description:{result.description}</h4>
-            </div>
+
+            <VStack
+                spacing={1}
+                align='stretch'
+            >
+                <Box h='40px' >
+                    <Text fontSize='30px' fontWeight='bold'>Results :</Text>
+                </Box>
+                <Box h='40px' >
+                    <Text fontSize='15px' fontWeight='bold'>Name:{result.name}</Text>
+                    <Text fontSize='15px' fontWeight='bold'>Emoji:{result.emoji}</Text>
+                    <Text fontSize='15px' fontWeight='bold'>Price:{result.price}</Text>
+                    <Text fontSize='15px' fontWeight='bold'>Description:{result.description}</Text>
+                </Box>
+            </VStack>
+            </VStack>
         </>
     );
 };
